@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+    Applicants list
+{% endblock %}
+
+{% block content %}
+    <form action="/application" method="POST"> 
+    <input type="hidden" name="code" value="{{code}}"
+    <label for="phone_number">Phone Number</label><br>
+    <input type="text" id="phone_number" name="phone_number"><br>>
+    <input type="submit" value="Submit"> 
+    </form>
+    
+
+
+
+
+
+
+    {% include 'footer.html' %}
+
+{% endblock %}

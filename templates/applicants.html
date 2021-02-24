@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+    Applicants list
+{% endblock %}
+
+{% block content %}
+    <div>
+        <table>
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Phone number</th>
+                <th>E-mail</th>
+                <th>Application code</th>
+            </tr>
+            {% for r in applicants %}
+                <tr>
+                    <td>{{ r['first_name'] }} </td>
+                    <td>{{ r['last_name'] }}</td>
+                    <td>{{ r['phone_number'] }}</td>
+                    <td>{{ r['email'] }}</td>
+                    <td><a href=/application/{{ r['application_code'] }}>{{ r['application_code'] }}</a>
+</td>
+                    
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+
+    {% include 'footer.html' %}
+{% endblock %}
